@@ -1,0 +1,16 @@
+// confirm username and password existince
+query loginQuery {
+    description: "Select record based on participant id"
+  statement:
+      SELECT org.ey.healthchain.login.participantLogin
+  WHERE ((participantId == _$partiId) AND (password == _$password))
+}
+
+
+// get the available recipient
+query recipientQuery {
+    description: "Select record for the available recipeient"
+  statement:
+      SELECT org.ey.healthchain.donors
+  WHERE ((donorStatus == 'DECEASED') AND (donorOrganDonated == _$recipeientOrgan))
+}

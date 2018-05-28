@@ -1,0 +1,26 @@
+namespace org.ey.healthchain.login
+
+/**
+* Capture the login and signin details for the participants
+*/
+
+participant participantLogin identified by participantId{
+  o String participantId
+  o String userName optional
+  o String password optional
+  o ParticipantType participants optional
+  o String participantMailId
+  o String participantPhoneNumber  
+}
+
+enum ParticipantType{
+  o HOSPITAL
+}
+
+event ReturnUserId{
+  o String userId
+}
+
+event LoginStatus{
+  o String status
+}

@@ -1,0 +1,59 @@
+namespace org.ey.healthchain
+
+/**
+ * Capturing the Donor Details
+ */
+
+ participant donors identified by donorId {
+   o String donorId
+   o String aadharNumber
+   o String donorFirstName optional
+   o String donorLastName optional
+   o String donorDob
+   o Integer donorAge
+   o String donorGender
+   o Long donorPhoneNumber
+   o String donorEmailId optional
+   o String donorMotherTongue
+   o String donorEthnicity
+   o String donorBloodGroup
+   o String donorHeight
+   o String donorWeight
+   o DateTime donorCreateTime
+   o String donorCauseOfDeath optional
+   o String donorOrganDonated
+   o String donorStatus optional
+   o String donorHereditaryDiseaseIfAny optional
+   o String donorNonHereditaryDiseaseIfAny optional
+   o String donorAntigenData optional
+ }
+
+ participant receipients identified by receipientId {
+   o String receipientId
+   o String aadharNumber
+   o String receipientFirstName optional
+   o String receipientLastName optional
+   o String receipientDob
+   o Integer receipientAge
+   o String receipientGender
+   o Long receipientPhoneNumber
+   o String receipientEmailId optional
+   o String receipientMotherTongue
+   o String receipientEthnicity
+   o String receipientBloodGroup
+   o String receipientHeight
+   o String receipientWeight
+   o DateTime receipientCreateTime
+   o String receipientRequiredOrgan optional
+   o String receipientReasonForRequeset optional
+   o String receipientAntigenData optional
+ }
+
+ asset organ identified by donorId {
+   o String donorId
+   o String donorName
+   o String donoraadharNumber
+   o String organDonated
+   o String receipientName
+   o String receipientaadharNumber
+ }

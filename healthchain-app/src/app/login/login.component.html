@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="health-background"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <!--form starts-->
+          <form #loginForm='ngForm' (ngSubmit)="submitLogin(loginForm)"  >
+            <h1>Health Chain</h1>
+            <p>- A Blockchain Organ Donor Platform</p>
+            <div class="form-group">
+              <label for="Username1">Username</label>
+              <input type="text" class="form-control"  ngModel name="userName" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="password1">Password</label>
+              <input type="password" class="form-control"  ngModel name="password" placeholder="Password" required>
+            </div>											
+            <button type="submit" class="btn btn-primary btn-md">Submit</button>
+            <button class="btn btn-primary btn-md" (click)="signUp()"> Sign Up</button>
+            </form>
+      <!--form ends-->
+        </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+/**
+ * ACL-Rules for Donor to CREATE Record.
+ */
+rule DonorCanCreateRecordOnly {
+    description: "Allow all participants read access to all resources"
+    participant: "org.ey.healthchain.donors"
+    operation: CREATE
+    resource: "org.ey.healthchain.*"
+    action: ALLOW
+}
+
+/**
+ * ACL-Rules for Donor to READ Record.
+ */
+rule DonorCanReadRecordOnly {
+    description: "Allow all participants read access to all resources"
+    participant: "org.ey.healthchain.donors"
+    operation: READ
+    resource: "org.ey.healthchain.*"
+    action: ALLOW
+}
+
+/**
+ * ACL-Rules for Donor NOT to UPDATE Record.
+ */
+rule DonorToUpdateRecord {
+    description: "Allow all participants read access to all resources"
+    participant: "org.ey.healthchain.donors"
+    operation: READ
+    resource: "org.ey.healthchain.*"
+    action: DENY
+}
+
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
